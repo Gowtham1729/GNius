@@ -1,0 +1,54 @@
+{% extends 'profiles/base.html' %}
+{% block title %}
+    Signup
+{% endblock %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/login.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row center">
+						<div class="form-box center">
+							<form role="form" action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                                   <div class="input-field">
+                                            <div class="input-field">
+                                                {{ field }}
+                                            </div>
+                                    </div>
+                                {% endfor %}
+                            {% for field in profile_form %}
+                                    <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                                   <div class="input-field">
+                                            <div class="input-field">
+                                                {{ field }}
+                                            </div>
+                                    </div>
+                                {% endfor %}
+
+                                <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="SignUp">
+							</div><br>
+                            </form>
+						</div>
+                    </div>
+				</div>
+			</div>
+
+		</div>
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+{% endblock %}
+
+

@@ -1,0 +1,39 @@
+{% extends 'profiles/base.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/login.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row center">
+						<div class="form-box center">
+							<form role="form" action="{% url 'profiles:login_user'%}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="non input-field left" style="color: #ffffff">
+								UserName
+                                    </div>
+							<div class="input-field">
+							<input id="id_username" maxlength="30" name="username" type="text" required>
+							</div>
+                                <div class="non input-field left" style="color: #ffffff">
+								Password
+                                    </div>
+                                <div class="input-field">
+							<input id="id_password" maxlength="30" name="password" type="password"  required>
+							</div>
+                                <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Login">
+							</div><br>
+                            </form>
+						</div>
+                    </div>
+				</div>
+			</div>
+
+		</div>
+{% endblock %}

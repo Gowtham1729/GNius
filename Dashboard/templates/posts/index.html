@@ -1,0 +1,82 @@
+{% extends 'posts/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'parcels/parcels.css' %}">{% endblock %}
+{% block titl %}
+    Check your parcels here
+{% endblock %}
+{% block body %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container center">
+	  				<div class="row contents-box">
+
+							<div class="col s12 m12 center">
+
+								<h6>Want to check your order has been delivered or not?</h6>
+
+								</div>
+                        <form  method='GET' action=''>
+						<div class="col s12 m12 center search"><input type="text" value='{{ request.GET.q }}' name='q' class="search-box" placeholder="Search for Names"><button type="submit" class="search-button"><i class="tiny material-icons">search</i></button></div>
+</form>
+
+
+
+					</div>
+					<div id="arrow-key" class="toggle_parent btn-floating center">
+						<div class="toggleHolder"><div class='toggler' align="center"><i class="material-icons">keyboard_arrow_up</i></div>
+
+							<div class='toggler' style='display:none;' align="center"><i class="material-icons">keyboard_arrow_down</i></div>
+							</div>
+
+
+					</div>
+					<div class="toggled_content" style='display:none;'>
+						<ul class="collection">
+						    <li class="collection-item">
+						      <table class="parcel-table">
+                              <thead>
+                <tr>
+
+
+                    <th>Company</th>
+                    <th>Delivery To</th>
+
+                    <th>Hostel Name</th>
+
+                </tr>
+            </thead>
+                              <tbody>
+                                  {% for obj in couriers %}
+								    <tr>
+								  	    <td>{{ obj.company }}</td>
+									    <td>{{ obj.receiver }}</td>
+									    <td>{{ obj.hostelname }}</td>
+								    </tr>
+                                  {% endfor %}
+                              </tbody>
+								</table>
+
+
+						    </li>
+
+						  </ul>
+
+						</div>
+
+				</div>
+
+			</div>
+		</div>
+		<script>
+			$('.toggler').on('click',function(){
+  $(this).parent().children().toggle();  //swaps the display:none between the two spans
+  $('.toggled_content').slideToggle();  //swap the display of the main content with slide action
+
+});
+$(document).ready()
+{
+$('.toggled_content').slideToggle();
+}
+		</script>
+{% endblock %}

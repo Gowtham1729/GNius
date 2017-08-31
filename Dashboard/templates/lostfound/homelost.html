@@ -1,0 +1,30 @@
+{% extends 'lostfound/base.html' %}
+{% block css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/home.css' %}">
+    {% block title %}
+        Lost/Found
+        {% endblock %}
+{% endblock %}
+{% block titl %}
+    Lost & Found :(
+{% endblock %}
+{% block body %}
+<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row contents-box">
+
+							<div class="col s12 m6">
+								<h4>Lost Something? <br>Found Something??<br>Let Others know:</h4>
+                         <div class="col s12 center"><button class="upload-btn"><a href="{% url 'lostfound:reportlost' %}">Lost</a></button></div>
+                         <div class="col s12 center"><button class="upload-btn"><a href="{% url 'lostfound:reportfound' %}">Found</a></button></div>
+                         <div class="col s12 center"><button class="upload-btn"><a href="{% url 'lostfound:matchfound' %}">Check for Matches</a></button></div></div>
+							<div class="col s12 m6" align="right" style="padding-right: 0px;">
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

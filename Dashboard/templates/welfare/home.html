@@ -1,0 +1,29 @@
+{% extends 'welfare/base.html' %}
+{% block css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/home.css' %}">
+{% endblock %}
+{% block titl %}
+    Don't wait to complain
+{% endblock %}
+{% block body %}
+<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row contents-box">
+
+							<div class="col s12 m6">
+								<h4>Welfare problems?</h4>
+								<h6>This complaint box guarantees responses!</h6>
+                                <div class="col s12 m6 center"><a href="{% url 'welfare:register' %}" ><button class="upload-btn">Complaint</button></a></div>
+                                <div class="col s12 m6 center"><a href="{% url 'welfare:complaints' %}"><button class="search-btn">Complaints</button></a></div>
+							</div>
+							<div class="col s12 m6" align="right" style="padding-right: 0px;">
+								<img src="{% static 'welfare/images/welfare (1).png' %}" style="height:70px; width: 100px;">
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

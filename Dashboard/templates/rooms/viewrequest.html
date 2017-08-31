@@ -1,0 +1,27 @@
+{% extends 'rooms/base.html' %}
+{% block css %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'rooms/viewr.css' %}">
+{% endblock %}
+{% block titl %}
+    your requests
+{% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="container">
+			<div class="row contents-box">
+                <u1>
+
+                    {%for object in object_list %}
+                        <li>{{ object.Datefrom }} - {{ object.Dateto }} </li>
+                    {%  endfor %}
+                 </u1>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+

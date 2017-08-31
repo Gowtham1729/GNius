@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+        <title>Timetable</title>
+		<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'
+			type='text/css'>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"  media="screen,projection"/>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'terashare/base.css' %}"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {% block files %} {% endblock %}
+    </head>
+
+    <body>
+		<nav>
+			<div class="nav-wrapper indigo darken-3">
+			  <ul class="brand-logo left" id="gnius">GNius</ul>
+			  <a href="" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">chevon_right</i></a>
+
+			  <ul class="brand-logo center hide-on-med-and-down">
+				<li><a  href="{% url 'home:home' %}">Home</a></li>
+				<li><a  href="{% url 'terashare:home' %}">TeraShare</a></li>
+				<li><a href="{% url 'timetable:table' %}" class="active">Time Table</a></li>
+                  <li><a href="{% url 'welfare:home' %}">Welfare</a></li>
+                  <li><a href="{% url 'parcel:parcels' %}" >Parcel</a></li>
+                  <li><a href="{% url 'shuttleservice:buses' %}">Shuttle</a></li>
+                  <li><a  href="{% url 'rooms:home' %}">Rooms</a></li>
+                  <li><a href="{% url 'lostfound:homelost' %}">Lost/Found</a></li>
+			  </ul>
+
+				<ul class="brand-logo right hide-on-med-and-down">
+				 <li><a href="{% url 'profiles:logout_user' %}"><i class="material-icons">exit_to_app</i></a></li>
+				<li><a href="#" data-letters="{{ request.user.username|upper|make_list|first }}" class="letters"></a></li>
+			  </ul>
+
+			<ul class="side-nav right indigo darken-3" id="mobile-demo">
+				<li><a href="{% url 'home:home' %}">Home</a></li>
+				<li><a href="{% url 'terashare:home' %}">TeraShare</a></li>
+				<li><a href="{% url 'timetable:table' %}" class="active">Time Table</a></li>
+                <li><a href="{% url 'welfare:home' %}">Welfare</a></li>
+                <li><a href="{% url 'parcel:parcels' %}" >Parcel</a></li>
+                <li><a href="{% url 'shuttleservice:buses' %}">Shuttle</a></li>
+                <li><a  href="{% url 'rooms:home' %}">Rooms</a></li>
+                  <li><a href="{% url 'lostfound:homelost' %}">Lost/Found</a></li>
+				 <li><a href="{% url 'profiles:logout_user' %}"><i class="material-icons">exit_to_app</i></a></li>
+				<li><a href="#" data-letters="{{ request.user.username|upper|make_list|first }}" class="letters"></a></li>			</ul>
+
+			</div>
+  		</nav>
+  		<div class="section indigo darken-1 center" style="color: #ffffff; padding: 20px;">
+  			{% block titl %}Hello! {{ request.user.username }}{% endblock %}
+  		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+		<script>
+			 $(".button-collapse").sideNav({edge: 'right'});
+		</script>
+
+    {% block body %}
+
+    {% endblock %}
+	  </body>
+</html>

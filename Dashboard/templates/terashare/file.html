@@ -1,0 +1,94 @@
+{% extends 'terashare/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/file.css' %}">
+{% endblock %}
+{% block titl %}
+    {{ course }}
+{% endblock %}
+{% block body %}
+<div class="container">
+  		<div class="row">
+  			<div class="container">
+  				<div class="row">
+					<div class="search center">
+                        <div class="search-section"><input type="text"  onkeyup="myFunction()" class="search-box" placeholder="Search to filter"><a class="upload-button" href="{% url 'terashare:upload' %}"><div class="tiny material-icons">file_upload</div></a><button type="submit" class="search-button"><div class="tiny material-icons"><a href="{% url 'terashare:search_course' %}">search</a></div></button>
+						</div>
+					</div>
+
+					<div class="browse">
+						<nav class="smaller-nav">
+							<div class="nav-wrapper indigo darken-3">
+								  <ul class="brand-logo hide-on-med-and-down">
+                                      {% for folders in all_folders %}
+                                          <li><a class="{% if folder == folders %}active-small{% endif %}"  href="{% url 'terashare:files' course.id folders.id %}">{{ folders }}</a></li>
+                                      {% endfor %}
+                                  </ul>
+								  <a href="#" data-activates="mobile-demo-2" class="button-collapse right"><i class="material-icons">menu</i></a>
+								  <ul class="side-nav right indigo darken-3" id="mobile-demo-2" >
+                                      {% for folder in all_folders %}
+                                          <li><a href="{% url 'terashare:files' course.id folder.id %}">{{ folder }}</a></li>
+                                      {% endfor %}
+									<li><a href="#">Others<i class="fa fa-caret-down right"></i></a></li>
+									</ul>
+                        </div>
+						</nav>
+					</div>
+					<div class="searched-items">
+					<ul class="collection" class="live-search-list">
+                    <script type="text/javascript">
+                        var flag = false
+                    </script>
+                        {% for file in all_files %}
+                            {% if file.Course == course and file.Type == folder %}
+                                <script type="text/javascript">
+                                     var flag = true
+                                </script>
+                                <li class="collection-item avatar">
+					                <span class="title">{{ file.Title }}</span>
+					                <p>{{ file.filename }}</p>
+                                   <a class="secondary-content"><a class="add-white" href="{% url 'terashare:download' course_id folder_id file.id %}"><button class="download-button"> Download</button></a><a class="add-white" href="#"><button class="report-button" href="#">Report</button></a></a>
+					            </li>
+                            {% endif %}
+                        {% endfor %}
+					  </ul>
+                        <script>
+                           if (flag == false) {
+                               document.write("<h5>Sorry no files <i class='material-icons'>receipt</i></h5>")
+                           }
+                        </script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+$("button-collapse").sideNav({edge: 'right'});
+$jQuery(document).ready(function($){
+
+$('.collection li').each(function(){
+$(this).attr('data-search-term', $(this).text().toLowerCase());
+});
+
+$('.search-box').on('keyup', function(){
+
+var searchTerm = $(this).val().toLowerCase();
+
+    $('.collection li').each(function(){
+
+        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+
+    });
+
+});
+
+});
+
+
+
+</script>
+{% endblock %}

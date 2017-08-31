@@ -1,0 +1,63 @@
+{% extends 'lostfound/base.html' %}
+
+{% block title %} Found {% endblock %}
+
+{% block css%}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/upload.css' %}">
+{% endblock %}
+{% block titl %}
+    Report Found
+{% endblock %}
+{% block body %}
+
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row">
+						<div class="form-box center">
+                            <input type='hidden' name='csrfmiddlewaretoken' value='oj7UPyPT6snXJGi9l2u1nxJOuJliKgtpGZu4yzEhXCEjrkJf0A48H4ieAt11hctm' />
+
+								    <div class="input-field">
+                                    <div class="input-field">
+                                        <label for="id_Item_Name">Item:</label><input id="id_Item_Name" maxlength="100" name="Item_Name" type="text" required />
+                                    </div>
+                                    </div>
+
+								    <div class="input-field">
+                                    <div class="input-field">
+                                        <label for="id_Description">Description:</label><textarea cols="40" id="id_Description" maxlength="500" name="Description" rows="10" required></textarea>
+                                    </div>
+                                    </div>
+
+								    <div class="input-field">
+                                    <div class="input-field">
+                                        <label for="id_Found_on">Found On:</label><input id="id_Found_on" maxlength="200" name="Found_on" type="text" required />
+                                    </div>
+                                    </div>
+
+
+								    <div class="input-field">
+                                    <label for="id_Item_Image">Insert an Image:
+                                    <div class="input-field" id="choose-file">Choose:
+                                        <input id="id_Item_Image" name="Item_Image" type="file" e />
+                                    </div>
+                                    </label>
+                                    </div>
+
+                            <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Submit">
+							</div><br>
+							</div><br></div>
+				</div>
+			</div>
+</form>
+
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+
+{% endblock %}

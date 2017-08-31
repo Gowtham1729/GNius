@@ -1,0 +1,57 @@
+{% extends 'terashare/base.html' %}
+
+{% block title %} Upload {% endblock %}
+
+{% block css%}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/upload.css' %}">
+{% endblock %}
+{% block titl %}
+    Upload file
+{% endblock %}
+{% block body %}
+
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row">
+						<div class="form-box center">
+                            {% for field in form %}
+                                {% if field.label != "File" %}
+                                    <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                                   <div class="input-field">
+                                            <div class="input-field">
+                                                {{ field }}
+                                            </div>
+                                    </div>
+                                    {% else %}
+                                    <div class="input-field">
+                                            <div class="input-field" id="choose-file">
+                                                Choose-file
+                                                {{ field }}
+                                            </div>
+                                    </div>
+                                {% endif %}
+
+                                            {% endfor %}
+                            <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Upload">
+							</div><br>
+                            <div class="left"><a href="{% url 'terashare:home' %}"><i class="material-icons" style="color: white;">arrow_backward</i></a></div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+</form>
+
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+
+{% endblock %}

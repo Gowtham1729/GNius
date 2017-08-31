@@ -1,0 +1,36 @@
+{% extends 'terashare/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/search.css' %}">
+{% endblock %}
+{% block titl %}
+    Search the course
+{% endblock %}
+{% block body %}
+
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row contents-box">
+
+							<div class="col s12 m12 center">
+								<h4>Sharing is caring!</h4>
+								<h6>Knowledge increases when it is spread. <br> Reap the benefits of what you share!</h6>
+							</div>
+                        <div class="col s12 m12 center search">
+                            <form class="form-inline my-2 my-lg-0" method='GET' action='' >
+                            <input type="text" class="search-box" name="q" value="{{ request.GET.q }}" placeholder="Search for Courses here"><button type="submit" class="search-button"><i class="tiny material-icons">search</i></button>
+                            </form>
+                        </div>
+
+
+					</div>
+					<div class="row main-box">
+                        <a href="{% url 'terashare:home' %}" ><i class="material-icons" style="color: white;">arrow_backward</i></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+{% endblock %}

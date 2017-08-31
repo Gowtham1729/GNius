@@ -1,0 +1,45 @@
+{% extends 'terashare/base.html' %}
+
+{% block title %} Upload {% endblock %}
+
+{% block css%}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/upload.css' %}">
+{% endblock %}
+{% block titl %}
+    Register your courses to begin
+{% endblock %}
+{% block body %}
+
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row">
+						<div class="form-box center">
+                            {% for field in form %}
+                                    <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                                   <div class="input-field">
+                                            <div class="input-field">
+                                                {{ field }}
+                                            </div>
+                                    </div>{% endfor %}
+                            <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Register">
+							</div><br>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+</form>
+
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+
+{% endblock %}

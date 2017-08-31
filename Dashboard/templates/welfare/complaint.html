@@ -1,0 +1,42 @@
+{% extends 'welfare/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'welfare/complaint.css' %}">
+{% endblock %}
+{% block titl %}
+    Complaint your issue
+{% endblock %}
+{% block body %}
+    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row">
+						<div class="form-box center">
+                            {% for field in form %}
+                                <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                            <div class="input-field">
+                                <div class="input-field">
+                                    {{ field }}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        <div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Complain">
+							</div><br>
+                            <div class="right"><a href="{% url 'welfare:home' %}"><i class="material-icons" style="color: white;">arrow_forward</i></a></div>
+                        </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+</form>
+
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+{% endblock %}

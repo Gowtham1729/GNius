@@ -1,0 +1,52 @@
+{% extends 'lostfound/base.html' %}
+{% block css %}
+    <style>.contents-box
+			{
+				margin-top: 3rem;
+				background: rgba(63,81,181,1);
+				padding: 50px;
+				color: #ffffff;
+			}
+			.form-btn
+			{
+				background-color: #ff4086;
+				border: 0px;
+				margin-top: 20px;
+				padding: 10px;
+				color: #ffffff;
+			}</style>
+{% endblock %}
+{% block titl %}
+    Lost & Found :(
+{% endblock %}
+{% block body %}
+<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row contents-box">
+                        <ul id="listed">
+
+                        </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			 $(".button-collapse").sideNav({edge: 'right'});
+            $(document).ready(function(){
+                var x = {{ lst|safe }};
+                var l = x.length;
+                printing = "";
+                for (var i=0; i<l;i++)
+                {
+                    printing = printing+"<li>"+x[i]+"</li>"+"<br>";
+                    if (i%2 != 0) {
+                        printing = printing + "<br>";
+                    }
+                }
+                $('#listed').html(printing);
+
+
+            });
+        </script>
+{% endblock %}

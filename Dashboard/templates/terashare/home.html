@@ -1,0 +1,29 @@
+{% extends 'terashare/base.html' %}
+{% block css %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/home.css' %}">
+{% endblock %}
+{% block titl %}
+    Welcome to Terashare
+{% endblock %}
+{% block body %}
+<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row contents-box">
+
+							<div class="col s12 m6">
+								<h4>Sharing is caring!</h4>
+								<h6>Knowledge increases when it is spread. <br> Reap the benefits of what you share!</h6>
+                                <div class="col s12 m6 center"><a href="{% url 'terashare:upload' %}" ><button class="upload-btn">Upload</button></a></div>
+                                <div class="col s12 m6 center"><a href="{% url 'terashare:search_course' %}"><button class="search-btn">Search</button></a></div>
+							</div>
+							<div class="col s12 m6" align="right" style="padding-right: 0px;">
+								<img src="{% static 'terashare/images/welcome.jpeg' %}" style="margin-right: 0px;">
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}

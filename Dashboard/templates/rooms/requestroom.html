@@ -1,0 +1,53 @@
+{% extends 'rooms/base.html' %}
+{% block css %}
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'rooms/req.css' %}">
+{% endblock %}
+{% block titl %}
+    Request a room
+{% endblock %}
+{% block body %}
+
+  		<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row">
+						<div class="form-box center">
+						<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+                            {% for field in form %}
+                                <div class="non input-field left" style="color: #ffffff">
+								{{ field.label }}
+                                    </div>
+                                <div class="input-field">
+                                <div class="input-field">
+                                    {{ field }}
+                                </div>
+                                </div>
+                            {% endfor %}
+							<div class="input-field">
+							<input class="center" type="submit" name="submit_btn" value="Submit">
+							</div><br>
+                            <div class="left"><a href="{% url 'rooms:home' %}"><i class="material-icons" style="color: white;">arrow_backward</i></a></div>
+                            <div class="right"><a href="{% url 'rooms:showrequest' %}"><i class="material-icons" style="color: white;">arrow_forward</i></a></div>
+
+
+						</form>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+    <script>
+    $('select').material_select();
+    $('')
+    </script>
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+    </script>
+{% endblock %}

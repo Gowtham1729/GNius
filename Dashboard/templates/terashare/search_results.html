@@ -1,0 +1,79 @@
+{% extends 'terashare/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'terashare/file.css' %}">
+{% endblock %}
+{% block titl %}
+    Matched courses
+{% endblock %}
+{% block body %}
+
+<div class="container">
+  		<div class="row">
+  			<div class="container">
+  				<div class="row">
+					<div class="search center">
+                        <div class="search-section"><input type="text" id="myInput" onkeyup="myFunction()" class="search-box" placeholder="Search for Books and so on"><a class="upload-button" href="{% url 'terashare:upload' %}"><div class="tiny material-icons">file_upload</div></a><button type="submit" class="search-button"><div class="tiny material-icons"><a href="{% url 'terashare:search_course' %}">search</a></div></button>
+						</div>
+					</div>
+
+					<div class="browse">
+						<nav class="smaller-nav">
+							<div class="nav-wrapper indigo darken-3">
+								  <ul class="brand-logo hide-on-med-and-down">
+                                      <li><a href="#">Courses</a></li>
+								  </ul>
+								  <a href="" data-activates="mobile-demo-2" class="button-collapse right"><i class="material-icons">chevron_right</i></a>
+								  <ul class="side-nav right indigo darken-3" id="mobile-demo-2" >
+                                          <li><a href="#">Course</a></li>
+									</ul>
+                        </div>
+						</nav>
+					</div>
+					<div class="searched-items">
+					<ul class="collection" id="myUL">
+                    <script type="text/javascript">
+                        var flag = false
+                    </script>
+                        {% for course in all_courses %}
+                                <script type="text/javascript">
+                                     var flag = true
+                                </script>
+                                <li class="collection-item avatar">
+					                <span class="title">{{ course }}</span>
+					                <p><a href={% url 'terashare:files' course.id 1%}>{{ course }}</a></p>
+					            </li>
+                        {% endfor %}
+					  </ul>
+                        <script>
+                           if (flag == false) {
+                               document.write("<h3 class='center'>No results</h3>")
+                           }
+                        </script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script>
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+{% endblock %}

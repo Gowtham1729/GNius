@@ -1,0 +1,107 @@
+{% extends 'home/base.html' %}
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'profiles/home.css' %}">
+{% endblock %}
+{% block body %}
+    <div id="bodydiv">
+
+  		<div class="container">
+	  		<div class="row">
+	  			<div class="container">
+	  				<div class="row center">
+						<div class="form-box center">
+							<h2 id="welcome">Welcome to GNius</h2>
+							<h5 id="description">A portal for the students, where IITGn students need what they need in one place on the web!</h5>
+							<a href="{% url 'terashare:home' %}" class="btn a-btn" id="genius">Lets be GNius!</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12 m4">
+						<div id="card1" class="card  indigo darken-1">
+
+							<div class="card-content">
+								<span class="card-title">Facilities like content sharing, hostel maintenance and so on</span>
+							</div>
+						</div>
+
+			</div>
+				<div id="card2" class="col s12 m4">
+						<div class="card  indigo darken-2">
+							<div class="card-content">
+								<span class="card-title">Want to know the next bus shuttle?</span>
+							</div>
+
+						</div>
+				</div>
+				<div id="card3" class="col s12 m4">
+						<div class="card  indigo darken-1">
+
+							<div class="card-content">
+								<span class="card-title">Frequently used data!</span>
+
+							</div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+		</div>
+    <script src='https://cdn.jsdelivr.net/kute.js/1.5.0/kute.min.js'></script>
+		<script src='https://cdn.jsdelivr.net/kute.js/1.5.0/kute-css.min.js'></script>
+    <script>
+			 $(".button-collapse").sideNav({edge: 'right'});
+			$(document).ready(function() {
+    $('select').material_select();
+  });
+		$(document).ready(function(){
+			$("#bodydiv").slideDown();
+			mycode();
+		});
+
+   //set interval
+var tid = setInterval(mycode, 7000);
+function mycode() {
+
+           // grab elements to play with
+var heading = document.getElementById('welcome');
+//var button = document.getElementsByClassName('form-btn')[0];
+
+// let's split the heading text by character
+var chars = heading.innerHTML.split('');
+
+// wrap the splits into spans and build an object with these spans
+heading.innerHTML = '<span>' + chars.join('</span><span>') + '</span>';
+var charsObject = heading.getElementsByTagName('SPAN'), l = charsObject.length;
+
+
+// built the tween objects
+var tween1 = KUTE.fromTo(
+    heading,
+    {color:'#3F51B5', opacity:0,lineHeight:70, fontSize: 40});
+
+for (var i=0; i<l; i++){
+    var fn = i === l-1 ? startButtonAnimation : removeSpan;
+    var elementToAnimate = charsObject[i];
+    var delay = 250+(10*i);
+
+    KUTE.fromTo(
+        elementToAnimate,
+        {opacity:0,fontSize:12},
+        {opacity:1,fontSize:20},
+        {complete: fn, delay: delay, duration: 500, easing: 'easingCubicOut'}).start();
+}
+
+function startButtonAnimation(){
+    tween1.start();
+}
+	function removeSpan()
+	{
+		$("#welcome").html("Welcome to GNius");
+	}
+
+}</script>
+{% endblock %}
