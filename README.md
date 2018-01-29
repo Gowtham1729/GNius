@@ -53,3 +53,91 @@ You need to host it on a server which supports Django.
 - Calendar Javascript: https://codepen.io/xmark/pen/WQaXdv
 - Line-feature in bullets on timetable: http://jsfiddle.net/5JP8Q/
 - [Kute.js](http://thednp.github.io/kute.js/): Example index.html used for making home screen animation
+
+##Screenshots
+
+![Home Page](https://github.com/Gowtham1729/GNius/blob/master/screenshots/1.Home%20page.png)
+
+
+
+![Login Page](https://github.com/Gowtham1729/GNius/blob/master/screenshots/2.login_page.png)
+
+
+
+
+![Sign Up](https://github.com/Gowtham1729/GNius/blob/master/screenshots/3.signup.png)
+
+
+
+
+![Home Page after login](https://github.com/Gowtham1729/GNius/blob/master/screenshots/4.home_page_after_login.png)
+
+
+
+
+![Terashare](https://github.com/Gowtham1729/GNius/blob/master/screenshots/5.terashare.png)
+
+
+
+
+![courselist](https://github.com/Gowtham1729/GNius/blob/master/screenshots/6.course_list.png)
+
+
+
+
+![files after selecting courses](https://github.com/Gowtham1729/GNius/blob/master/screenshots/6.course_list.png)
+
+
+
+
+![terashare upload](https://github.com/Gowtham1729/GNius/blob/master/screenshots/6.terashare_upload.png)
+
+
+
+
+![time table](https://github.com/Gowtham1729/GNius/blob/master/screenshots/7.class_timetable.png)
+
+
+
+
+![welfare portal](https://github.com/Gowtham1729/GNius/blob/master/screenshots/8.welfare_portal.png)
+
+
+
+
+![complaint register](https://github.com/Gowtham1729/GNius/blob/master/screenshots/9.complaint_register.png)
+
+
+
+
+![complaint status](https://github.com/Gowtham1729/GNius/blob/master/screenshots/10.complaint_status.png)
+
+
+
+
+![parcel check](https://github.com/Gowtham1729/GNius/blob/master/screenshots/11.parcel_checker.png)
+
+
+
+
+![next shuttle](https://github.com/Gowtham1729/GNius/blob/master/screenshots/12.next_shuttle.png)
+
+
+
+
+![room request](https://github.com/Gowtham1729/GNius/blob/master/screenshots/13.room_request.png)
+
+
+
+
+![lost and found](https://github.com/Gowtham1729/GNius/blob/master/screenshots/13.room_request.png)
+
+
+
+
+![register lost](https://github.com/Gowtham1729/GNius/blob/master/screenshots/15.register_lost.png)
+
+
+
+
+![check matches](https://github.com/Gowtham1729/GNius/blob/master/screenshots/16.check%20matches.png)
