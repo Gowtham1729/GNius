@@ -1,0 +1,85 @@
+.contents-box
+			{
+				margin-top: 3rem;
+				padding: 0px;
+
+				background-color: #ffffff;
+
+			}
+			@media (max-width: 992px) {
+				.contents-box{
+					padding: 5px;
+				}
+
+			}
+			.header-table
+			{
+				width: 100%;
+			}
+			.header-table td
+			{
+				width: 50%;
+			}
+			.header-button
+			{
+				background-color: #ffffff;
+				border: 0px;
+				width: 100%;
+			}
+			.header-button{
+
+			}
+			button.header-active
+			{
+				border-bottom: 6px solid #ff4086;
+				color: #ff4086;
+			}
+			button.header-button:focus
+			{
+				background-color: #ffffff;
+			}
+			button.header-button:active
+			{
+				background-color: #ffffff;
+			}
+			img
+			{
+
+				width: 100%;
+			}
+			hr
+			{
+				color: black;
+				height: 5px;
+			}
+			.toggler .material-icons
+			{
+				border-radius: 15px;
+				background-color: #ff4086;
+				color: #ffffff;
+				line-height: 15px;
+				padding: 5px;
+			}
+			h6,h2,.toggled_content
+			{
+				color: #6f6f6f;
+			}
+            #hellobar
+            {
+                color: #ffffff;
+            }
+            @media (max-width: 992px) {
+				.contents-box{
+					padding: 5px;
+				}
+				.fa-bell:after{
+					display: none;
+				}
+				.fa-bell
+				{
+					color: #ff4086;
+					margin-left: 15px;
+				}
+
+
+			}

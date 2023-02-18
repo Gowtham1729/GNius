@@ -1,0 +1,27 @@
+.contents-box
+			{
+				margin-top: 3rem;
+				background: rgba(63,81,181,1);
+				padding: 50px;
+				color: #ffffff;
+			}
+			.upload-btn
+			{
+				background-color: #ff4086;
+				border: 0px;
+				margin-top: 20px;
+				padding: 10px;
+				color: #ffffff;
+			}
+			.search-btn
+			{
+				background-color: #f4f4f4;
+				border: 0px;
+				margin-top: 20px;
+				padding: 10px;
+
+			}
+			a .search-btn
+			{
+				color: #ff4086 !important;
+			}

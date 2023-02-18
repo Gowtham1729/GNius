@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'Dashboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gnius',
+        'NAME': 'interiit_db',
         'USER': 'root',
         'PASSWORD': 'gowtham',
         'HOST': 'localhost',

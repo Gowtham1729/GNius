@@ -1,0 +1,60 @@
+#gnius
+			{
+				font-size: 16px;
+				margin-left: 8px;
+			}
+			.fa-bell
+			{
+				font-size: 16px;
+			}
+			.nav-wrapper .active
+			{
+				background-color: #ff4086;
+			}
+			.active-small
+			{
+				box-shadow: inset 0px -6px 0px 0px #ff4086;
+			}
+
+			[data-letters]:before {
+			  content:attr(data-letters);
+			  display:inline-block;
+			  font-size:1em;
+			  width:1.75em;
+			  height:1.75em;
+			  line-height:1.75em;
+			  text-align:center;
+			  border-radius:50%;
+			  background: #ffffff;
+			  vertical-align:middle;
+			  margin-right:1em;
+			  color: #efefef;
+  			}
+
+  			.fa-bell:after{ /* http://jsfiddle.net/zxVhL/15/ */
+			    content:"";
+			    position: absolute;
+			    background: #ff4086;
+			    height:0.3rem;
+			    top: 1.75rem;
+			    margin-left: -6px;
+			    width:0.3rem;
+			    line-height: 0.3rem;;
+			    font-size: 1rem;
+			    border-radius: 50%;
+			    border:1px solid #ff4086;
+			}
+			body
+			{
+				background-color: #f4f4f4;
+			}
+			.side-nav a, .col a {
+    color: #ffffff;
+			}
+			.nav-wrapper .active-hover{
+				background-color: #ff4086;
+			}
+			nav ul a
+			{
+				padding: 0px 10px;
+			}

@@ -1,0 +1,47 @@
+body
+			{
+				background-color: #f4f4f4;
+			}
+			.form-box
+			{
+				margin-top: 3rem;
+				background: rgba(63,81,181,1);
+				padding: 50px;
+			}
+			/*input.half-size-input
+			{
+				display: inline-block;
+				width: 50%;
+			}*/
+			input[type=file]
+			{
+				display: none;
+			}
+			#choose-file
+			{
+				height: 20px;
+				width: 100px;
+				background-color: #303E9F;
+				color: #ffffff;
+				display: block;
+				border: 0px;
+			}
+			#choose-file.active
+			{
+				box-shadow: inset 0px 0px 0px 0px #303E9F;
+			}
+			input[type=submit]
+			{
+				background-color: #ff4086;
+				border: 0px;
+				margin-top: 20px;
+				padding: 10px;
+				color: #ffffff;
+
+			}
+			.select-wrapper{
+				color: rgba(255,255,255,0.87);
+			}
+			.select-wrapper span.caret{
+				color: rgba(255,255,255,0.87);
+			}

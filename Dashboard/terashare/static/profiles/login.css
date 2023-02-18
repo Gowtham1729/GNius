@@ -1,0 +1,55 @@
+#terabyte
+			{
+				font-size: 16px;
+				margin-left: 8px;
+			}
+			.fa-bell
+			{
+				font-size: 16px;
+			}
+			li .active
+			{
+				background-color: #ff4086;
+			}
+			.active-small
+			{
+				box-shadow: inset 0px -6px 0px 0px #ff4086;
+			}
+
+
+			body
+			{
+				background-image:url(./images/hostelnight.jpg);
+				background-size: cover;
+			}
+			.form-box
+			{
+				margin-top: 3rem;
+				padding: 50px;
+				background-color: #ff4086;
+				opacity: 0.8;
+			}
+
+
+
+
+			input[type=submit]
+			{
+				background-color: #ff4086;
+				border: 2px solid #ffffff;
+				margin-top: 20px;
+				padding: 10px;
+				color: #ffffff;
+				-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+
+			}
+			input[type=submit]:hover
+			{
+
+				background-color: #ffffff;
+				color: #ff4086
+			}

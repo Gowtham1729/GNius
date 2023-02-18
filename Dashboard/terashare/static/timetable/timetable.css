@@ -1,0 +1,188 @@
+body
+			{
+				background-color: #f4f4f4;
+			}
+			.contents-box
+			{
+				margin-top: 3rem;
+				padding: 50px;
+
+			}
+			@media (max-width: 992px) {
+				.contents-box{
+					padding: 5px;
+				}
+				.fa-bell:after{
+					display: none;
+				}
+				.fa-bell
+				{
+					color: #ff4086;
+					margin-left: 15px;
+				}
+
+
+			}
+
+
+			.timetable
+			{
+				background-color: #3F51B5;
+				vertical-align: top;
+			}
+			.calendar
+			{
+				background-color: #ffffff;
+				width: 60%;
+			}
+			.nav-wrapper
+			{
+				background-color: #3F51B5;
+				outline: 0px;
+				border: 0px;
+
+			}
+			/* Experiences */
+ul.experiences {
+    padding-left: 25px;
+    margin-top: 10px;
+}
+ul.experiences li {
+    padding-left: 10px;
+    margin-bottom: 2.5em;
+    list-style: none;
+
+}
+
+.where {
+    font-size: 14px; /* 18/16 -> 18px */
+    color: #fff;
+    display: inline;
+
+}
+.what {
+    font-size: 10px; /* 12/16 -> 12px */
+    font-weight: 400;
+    color: #fff;
+
+    display: inline-block;
+    padding: 0 12px;
+    margin: -5px 0.5em 0 0 !important;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+
+.description {
+    display: block;
+    margin-top: 0.5em;
+}
+
+
+/* BORDERS AND BULLETS */
+
+p {
+    /*CSS reset*/
+    margin-bottom: 0;
+}
+
+ul.experiences li {
+    position:relative; /* so that pseudo elements are positioned relatively to their "li"s*/
+    /* use padding-bottom instead of margin-bottom.*/
+    margin-bottom: 0; /* This overrides previously specified margin-bottom */
+    padding-bottom: 2.5em;
+}
+
+ul.experiences li:after {
+    /* bullets */
+    content: "";
+    position: absolute;
+    left: -20px; /*adjust manually*/
+    top: 0px;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #ffffff;
+}
+
+ul.experiences li:before {
+    /* lines */
+    content:"";
+    position: absolute;
+    left: -16px; /* adjust manually */
+    border-left: 2px solid #ffffff;
+    height: 115%;
+    width: 3px;
+}
+
+ul.experiences li:first-child:before {
+   /* first li's line */
+   top: 6px; /* moves the line down so that it disappears under the bullet. Adjust manually */
+}
+
+ul.experiences li:last-child:before {
+    /* last li's line */
+   height: 6px; /* shorten the line so it goes only up to the bullet. Is equal to first-child:before's top */
+}
+			nav.smaller-nav
+			{
+				margin-left: 3px;
+				margin-top: -5px;
+		box-shadow:	0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0 rgba(0,0,0,0), 0 0px 0px 0px rgba(0,0,0,0);
+}
+
+			.calendar-table
+			{
+				width: 100%;
+				text-align: center;
+			}
+
+			thead {
+    border-bottom: 0px;
+}
+			#btnPrev,#btnNext
+			{
+				border: 0px;
+				background-color: #ffffff;
+				margin: auto 5px;
+				text-align: center;
+			}
+			#btnPrev
+			{
+				float:left;
+			}
+			#btnNext
+			{
+				float:right;
+			}
+			.month-row
+			{
+				color: #5f5f5f;
+				text-align: center;
+			}
+			.days-data,.normal
+			{
+				text-align: center;
+			}
+			.today .clickable
+			{
+				text-align: center;
+			}
+			.today
+			{
+				text-align: center;
+
+				border-radius: 50px;
+				background-color: #ff4086;
+				color: #ffffff;
+			}
+			today .clickable a{
+				color: #ffffff;
+			}
+			.not-current
+			{
+				color: #cfcfcf;
+				text-align: center;
+			}

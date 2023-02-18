@@ -1,0 +1,153 @@
+body
+			{
+				background-color: #f4f4f4;
+			}
+			.search
+			{
+				padding-top: 3rem;
+			}
+			
+			input.search-box
+			{
+				display: inline-block;
+				width: -webkit-calc(100% - 89px);
+    			width: -moz-calc(100% - 89px);
+				margin-left: 0px;
+				height: 2rem;
+				
+				min-width: 50px;
+				background-color: #ffffff;
+				border: 0px;
+				outline: 0px;
+				padding-left: 5px;
+				font-size: 12px;
+				
+				float: left;
+			}
+
+			input[type=text]:focus,.search-box:focus
+			{				
+				border: 0px !important;
+				outline: 0px;
+				border-bottom: 0px;	
+				box-shadow:none;		
+			}
+
+			.search-button,.upload-button
+			{
+				display: inline-block;
+				height: 2rem;
+				width: 42px;
+				margin-right: 0px;
+				margin-left: 0px;
+				outline: 0px;
+				color: #ffffff;
+				border:0px;
+				
+				font-size: 16px;
+				
+				float:right;
+			}
+			.search-button
+			{
+				background-color: #ff4086;
+			}
+			.search-button a
+			{
+				color: #ffffff;
+			}
+			.upload-button
+			{
+				background-color: #c6c9ea;
+			}
+			.browse
+			{
+				margin-top: 2rem;
+				padding-top: 2rem;
+			}
+			.smaller-nav .brand-logo
+			{
+				margin-left: 5px;
+			}
+			.collection .collection-item.avatar
+			{
+				padding-left: 36px;
+				min-height: 42px;
+			}
+			.collection .collection-item.avatar .title
+			{
+				color: dimgray;
+			}
+			.collection .collection-item.avatar p
+			{
+				color: #d1d2d7;
+				font-size: 12px;
+			}
+			.download-button,.report-button
+			{
+				border: 0px;
+				outline: 0px;
+				height: 24px;
+				width: 56px;
+				font-size: 10px;
+				color: #ffffff;
+				-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+				background-color: transparent;
+				
+			}
+			.download-button
+			{
+				margin-right: 0.2rem;
+				box-shadow: rgba(255, 64, 134, 1) 0 80px 0px 2px inset;
+			}
+			.download-button:hover
+			{
+				color: #000;
+				box-shadow: rgba(255, 64,134, 1) 0 0px 0px 2px inset;
+			}
+			button.download-button:focus
+			{
+				background-color: #ff4086;
+			}
+			button.report-button:focus
+			{
+				background-color: dimgray;
+			}
+			
+			
+
+			@media screen and (max-width: 510px) {
+				    .collection .collection-item.avatar
+				{
+					min-height: 131px;
+				}
+				.collection .collection-item.avatar .secondary-content 
+				{
+					display: block;
+					top: auto;
+					bottom: 30px !important;
+				}
+			}
+			@media screen and (min-width: 510px) {
+				    .collection .collection-item.avatar .secondary-content
+				{
+					display: inline-block;
+					top: 16px;
+				}
+			}
+			.report-button
+			{
+				
+				margin-left: 0.2rem;
+				box-shadow: rgba(105,105,105, 1) 0 80px 0px 2px inset;
+			}
+			.report-button:hover
+			{
+				color: #000;
+				box-shadow: rgba(105,105,105, 1) 0 0px 0px 2px inset;
+			}
+			/* http://codepen.io/kavendish/pen/gJric/ */
